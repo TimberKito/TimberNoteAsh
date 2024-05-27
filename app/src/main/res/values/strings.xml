@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TimberNoteAsh</string>
+
+    <string name="tab_notes">Notes</string>
+    <string name="tab_info">Info</string>
+    <string name="tab_collect">Collect</string>
+
+    <string name="app_info">Application information</string>
+    <string name="share_app">Share application</string>
+    <string name="find_in_store">Go to the app store</string>
+</resources>
