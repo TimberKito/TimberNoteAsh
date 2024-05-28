@@ -18,4 +18,6 @@
 
     <string name="edit_title">Edit your notes</string>
     <string name="edit_change_bg">CHANGE BACKGROUND</string>
+
+    <string name="collect_empty">You have not collected notes yet!</string>
 </resources>

@@ -25,4 +25,6 @@ interface NoteDao {
     @Query("SELECT * FROM t_notes ORDER BY id DESC")
     fun getAllNotes(): List<Note>
 
+    @Query("select * from t_notes where collect = :collect ")
+    fun getCollectData(collect: Boolean = true): List<Note>
 }

@@ -1,6 +1,5 @@
 package com.sunling.softapp.timbernoteash.ui.activity
 
-import android.provider.ContactsContract.Data
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,10 +12,14 @@ import com.sunling.softapp.timbernoteash.tools.AppConstString.EXTRA_KEY
 import com.sunling.softapp.timbernoteash.tools.SpacingItemDecoration
 import com.sunling.softapp.timbernoteash.ui.adapter.ColorsAdapter
 import com.sunling.softapp.timbernoteash.ui.listener.ClickActionListener
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class NoteEditActivity : BaseActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityEditBinding
+    private var isCollect: Boolean = false
     private var note: Note? = null
     private var notetype: Int = 0
     private var selectedColor = 0
@@ -71,6 +74,7 @@ class NoteEditActivity : BaseActivity(), View.OnClickListener {
         binding.editDelete.setOnClickListener(this)
         binding.editConfirm.setOnClickListener(this)
         // collect
+        binding.editCollect.setOnClickListener(this)
     }
 
     private fun initNotesPage() {
@@ -78,6 +82,7 @@ class NoteEditActivity : BaseActivity(), View.OnClickListener {
             binding.editUserTitle.setText(note!!.title)
             binding.editContent.setText(note!!.content)
             binding.editLayout.background = applicationContext.getDrawable(notesBgColor[note!!.color])
+            binding.editCollect.isSelected = note!!.collect
         }
     }
 
@@ -100,18 +105,54 @@ class NoteEditActivity : BaseActivity(), View.OnClickListener {
             binding.editConfirm -> {
                 val newTitle = binding.editUserTitle.text.toString()
                 val newContent = binding.editContent.text.toString()
+                val newCollect = binding.editCollect.isSelected
                 if (newTitle.isEmpty()) {
                     Toast.makeText(this, "The title can not be blank!", Toast.LENGTH_SHORT).show()
                     return
                 }
-                commit(newTitle, newContent)
+                commit(newTitle, newContent, newCollect)
+            }
+
+            binding.editCollect -> {
+                if (!binding.editCollect.isSelected) {
+                    binding.editCollect.isSelected = !binding.editCollect.isSelected
+                    Toast.makeText(
+                        this@NoteEditActivity, "You have collected this notes.", Toast.LENGTH_SHORT
+                    ).show()
+                    CoroutineScope(Dispatchers.IO).launch {
+                        if (note != null) {
+                            note!!.collect = binding.editCollect.isSelected
+                            DataBaseManager.notesDatabase.noteDao().updateNote(note!!)
+                        }
+//                        note?.apply {
+//                            note!!.collect = binding.editCollect.isSelected
+//                        }?.let { DataBaseManager.notesDatabase.noteDao().updateNote(it) }
+                    }
+                } else {
+                    binding.editCollect.isSelected = !binding.editCollect.isSelected
+                    Toast.makeText(
+                        this@NoteEditActivity, "You canceled the collection of this notes.", Toast.LENGTH_SHORT
+                    ).show()
+                    CoroutineScope(Dispatchers.IO).launch {
+                        note?.apply {
+                            note!!.collect = binding.editCollect.isSelected
+                        }?.let { DataBaseManager.notesDatabase.noteDao().updateNote(it) }
+                    }
+                }
             }
         }
     }
 
-    private fun commit(newTitle: String, newContent: String) {
+    private fun commit(newTitle: String, newContent: String, newCollect: Boolean) {
         if (notetype == 0) {
-            DataBaseManager.insertNote(Note(title = newTitle, content = newContent, color = selectedColor))
+            DataBaseManager.insertNote(
+                Note(
+                    title = newTitle,
+                    content = newContent,
+                    color = selectedColor,
+                    collect = newCollect
+                )
+            )
         } else {
             if (note != null) {
                 note!!.title = newTitle

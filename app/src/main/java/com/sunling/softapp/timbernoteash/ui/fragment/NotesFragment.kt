@@ -41,6 +41,7 @@ class NotesFragment : BaseFragment() {
 
             override fun colorsSelect(i: Int) {
             }
+
         })
 
         binding.notesRecyclerView.apply {
@@ -57,7 +58,7 @@ class NotesFragment : BaseFragment() {
     override fun onResume() {
         super.onResume()
 
-        var allNotesList: MutableList<Note> = mutableListOf()
+        val allNotesList: MutableList<Note> = mutableListOf()
         mHandler = Handler {
             mAdapter.updateData(allNotesList)
             false
