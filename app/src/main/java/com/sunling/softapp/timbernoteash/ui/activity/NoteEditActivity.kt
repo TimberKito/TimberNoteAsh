@@ -88,7 +88,13 @@ class NoteEditActivity : BaseActivity(), View.OnClickListener {
             }
 
             binding.editDelete -> {
-
+                if (notetype != 0) {
+                    if (note != null) {
+                        DataBaseManager.deleteNote(note!!)
+                        Toast.makeText(this, "You have successfully deleted this note!", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                finish()
             }
 
             binding.editConfirm -> {
