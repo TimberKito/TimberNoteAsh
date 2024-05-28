@@ -7,4 +7,31 @@
     <color name="blue_bg_color">#80BFEFFF</color>
     <color name="pink_bg_color">#FFFFE4E1</color>
     <color name="grey">#FFAAA8A8</color>
+
+
+    <color name="color_D9E8FC">#D9E8FC</color>
+    <color name="color_F7DEE3">#F7DEE3</color>
+    <color name="color_EFE9F7">#EFE9F7</color>
+    <color name="color_DAF6E4">#DAF6E4</color>
+    <color name="color_FDEBAB">#FDEBAB</color>
+    <color name="color_F7F6D4">#F7F6D4</color>
+    <color name="color_EFEEF0">#EFEEF0</color>
+
+    <color name="color_FDE99D">#FDE99D</color>
+    <color name="color_FFD8F4">#FFD8F4</color>
+    <color name="color_FFE9DD">#FFE9DD</color>
+    <color name="color_FCFAD9">#FCFAD9</color>
+    <color name="color_B0E9CA">#B0E9CA</color>
+
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_222222">#222222</color>
+    <color name="color_FFECE1">#FFECE1</color>
+    <color name="color_C8C5CB">#C8C5CB</color>
+
+    <color name="color_CCCCCC">#CCCCCC</color>
+    <color name="color_e6000000">#E6000000</color>
+    <color name="color_CE3A54">#CE3A54</color>
+    <color name="color_033370">#033370</color>
+    <color name="color_827D89">#827D89</color>
 </resources>

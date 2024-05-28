@@ -8,4 +8,10 @@
     <string name="app_info">Application information</string>
     <string name="share_app">Share application</string>
     <string name="find_in_store">Go to the app store</string>
+
+    <string name="store_link">https://play.google.com/store/apps/details?id=</string>
+
+    <string name="info_title">App Information</string>
+
+    <string name="blank_notes">Add your notes …</string>
 </resources>
