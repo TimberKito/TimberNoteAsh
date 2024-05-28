@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_colors_layout"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/item_color"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:src="@drawable/shape_colors" />
+</LinearLayout>

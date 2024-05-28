@@ -14,4 +14,8 @@
     <string name="info_title">App Information</string>
 
     <string name="blank_notes">Add your notes …</string>
+
+
+    <string name="edit_title">Edit your notes</string>
+    <string name="edit_change_bg">CHANGE BACKGROUND</string>
 </resources>

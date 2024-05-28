@@ -7,9 +7,10 @@ import java.io.Serializable
 @Entity(tableName = "t_notes")
 data class Note(
     @PrimaryKey(autoGenerate = true)
-    val id: Int?,
+    var id: Int = 0,
     var title: String,
     var content: String?,
-    var color: Int = 0,
+    var color: Int,
     var collect: Boolean = false
-) : Serializable
+) : Serializable {
+}

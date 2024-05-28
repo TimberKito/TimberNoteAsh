@@ -38,6 +38,9 @@ class NotesFragment : BaseFragment() {
                     action(1, note)
                 }
             }
+
+            override fun colorsSelect(i: Int) {
+            }
         })
 
         binding.notesRecyclerView.apply {
