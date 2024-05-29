@@ -43,7 +43,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="14dp"
+                android:padding="20dp"
                 android:src="@drawable/svg_back" />
 
             <View
@@ -55,7 +55,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="14dp"
+                android:padding="20dp"
                 android:src="@drawable/selector_collect" />
 
             <ImageView
@@ -63,7 +63,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="14dp"
+                android:padding="20dp"
                 android:src="@drawable/svg_delete" />
 
             <ImageView
@@ -71,7 +71,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="14dp"
+                android:padding="20dp"
                 android:src="@drawable/svg_confirm" />
         </LinearLayout>
 

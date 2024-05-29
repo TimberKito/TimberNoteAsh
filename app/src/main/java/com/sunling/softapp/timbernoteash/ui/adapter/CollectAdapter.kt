@@ -39,7 +39,6 @@ class CollectAdapter(private val context: Context, val listener: ClickActionList
                 listener.clickAction(position, item)
             }
         }
-
         @SuppressLint("UseCompatLoadingForDrawables")
         fun bind(context: Context, note: Note?, position: Int) {
             binding.apply {
