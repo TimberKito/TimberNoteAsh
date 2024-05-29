@@ -41,6 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
+        android:backgroundTint="@color/pink_bg_color"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="28dp"
         app:cardCornerRadius="16dp">
@@ -57,7 +58,7 @@
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
-                android:src="@mipmap/ic_launcher" />
+                android:src="@mipmap/icon_logo" />
 
             <TextView
                 android:layout_width="wrap_content"
