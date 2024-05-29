@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TimberNoteAsh</string>
+    <string name="app_name">Color Notepad</string>
 
     <string name="tab_notes">Notes</string>
     <string name="tab_info">Info</string>

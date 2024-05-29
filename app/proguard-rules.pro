@@ -19,3 +19,16 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keepclassmembers class * {
+  @androidx.room.Query <methods>;
+}
+
+-keepclassmembers class com.sunling.softapp.timbernoteash.tools.AppConstString{
+  public static final java.lang.String DATABASE_NAME;
+  public static final int DATABASE_VERSION;
+}
+
+-keep class com.sunling.softapp.timbernoteash.db.NotesDatabase { *; }
+-keep class com.sunling.softapp.timbernoteash.dao.NoteDao { *; }
+-keep class com.sunling.softapp.timbernoteash.entity.Note { *; }
